@@ -31,7 +31,7 @@ export default class Navigation extends Component {
 
     return (
       <div>
-        <Navbar color="light" light expand="md">
+        <Navbar color="inverse" inverse expand="md" fixed="top" toggleable>
           <NavbarBrand href="/">Calvary Baptist Church</NavbarBrand>
           <NavbarToggler onClick={this.toggleMenu} />
           <Collapse isOpen={!isCollapsed} navbar>
