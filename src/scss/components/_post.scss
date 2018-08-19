@@ -1,5 +1,15 @@
 %post {
-  padding-bottom: 4em;
+  padding: 3em 0 3em 0;
+
+  .ui-post-meta {
+    margin-bottom: 1.25rem;
+    font-size: 14px;
+    color: #999;
+
+    .ui-post-author {
+      color: #007bff;
+    }
+  }
 }
 
 .ui-post {

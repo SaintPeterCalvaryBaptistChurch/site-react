@@ -1,14 +1,18 @@
 %page {
+  min-height: 95vh;
+
   .ui-content {
     padding-top: 1em;
   }
 
   .ui-footer {
     padding-top: 4rem;
+    margin-right: 0;
+    margin-left: 0;
 
     .ui-copyright {
       text-align: center;
-      padding-top: 2rem;
+      padding: 2rem;
       font-size: 14px;
       color: #777;
       width: 100%;
