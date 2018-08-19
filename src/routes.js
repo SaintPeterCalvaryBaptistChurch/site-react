@@ -5,7 +5,9 @@ import history from './history';
 
 import Navigation from './components/nav-component';
 
-import Page from './pages/page';
+import Home from './pages/home-page';
+import About from './pages/about-page';
+import Contact from './pages/contact-page';
 
 export default class Routes extends Component {
   render() {
@@ -15,9 +17,9 @@ export default class Routes extends Component {
           <Navigation />
           <Switch>
             <Redirect exact from="/" to="/home" />
-            <Route exact path="/home" component={Page} />
-            <Route exact path="/about" component={Page} />
-            <Route exact path="/contact" component={Page} />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/contact" component={Contact} />
           </Switch>
         </div>
       </Router>

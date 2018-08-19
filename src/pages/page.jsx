@@ -1,16 +1,41 @@
 import React, { Component } from 'react';
+import { Jumbotron, Container, Row } from 'reactstrap';
 
-import PageHero from '../components/page-hero-component';
+import Footer from '../components/footer-component';
 
-export default class Page extends Component {
+class Page extends Component {
   render() {
+    const {
+      headerTitle,
+      headerSubtitle,
+      headerBackground,
+      children
+    } = this.props;
+
+    const backgroundImage = headerBackground ? `url(${headerBackground})` : '';
+
     return (
-      <div style={{ height: '20000px' }}>
-        <PageHero
-          title="Calvary Baptist Church"
-          subtitle="Saint Peter, Minnesota"
-        />
+      <div className="ui-page">
+        <Jumbotron className="ui-page-hero" style={{ backgroundImage }}>
+          <div>
+            <h2 className="display-4">{headerTitle}</h2>
+            <hr className="small" />
+            <p className="lead">{headerSubtitle}</p>
+          </div>
+        </Jumbotron>
+
+        <Container>
+          <Row>{children}</Row>
+        </Container>
+
+        <Footer />
       </div>
     );
   }
 }
+
+Page.defaultProps = {
+  headerTitle: 'Calvary Baptist Church'
+};
+
+export default Page;

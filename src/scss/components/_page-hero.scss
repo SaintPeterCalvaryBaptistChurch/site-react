@@ -7,21 +7,12 @@
   height: 500px;
   color: white;
 
-  &-home {
-    background-image: url('/src/assets/bg-home.jpg');
-  }
-
-  &-about {
-    background-image: url('/src/assets/bg-about.jpg');
-  }
-
-  &-contact {
-    background-image: url('/src/assets/bg-contact.jpg');
-  }
-
-  &-mini-message {
-    background-image: url('/src/assets/bg-mini-message.jpg');
-  }
+  background: no-repeat center center;
+  background-color: #808080;
+  background-attachment: scroll;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
 
   @media (max-width: 800px) {
     height: 300;

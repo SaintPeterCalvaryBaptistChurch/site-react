@@ -1,0 +1,21 @@
+%page {
+  .ui-content {
+    padding-top: 1em;
+  }
+
+  .ui-footer {
+    padding-top: 4rem;
+
+    .ui-copyright {
+      text-align: center;
+      padding-top: 2rem;
+      font-size: 14px;
+      color: #777;
+      width: 100%;
+    }
+  }
+}
+
+.ui-page {
+  @extend %page;
+}
