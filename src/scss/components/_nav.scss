@@ -1,0 +1,15 @@
+%navbar {
+  &.-scrolled {
+    animation: slide-down 0.2s ease-in-out both;
+    background-color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  &.-unscrolled {
+    animation: fade-in 0.2s ease-in-out both;
+    background-color: transparent;
+  }
+}
+
+.ui-navbar {
+  @extend %navbar;
+}

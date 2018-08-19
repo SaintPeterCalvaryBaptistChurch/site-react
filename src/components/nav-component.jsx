@@ -9,6 +9,9 @@ import {
   NavItem,
   NavLink
 } from 'reactstrap';
+import classnames from 'classnames';
+
+const SCROLL_THRESHOLD = 200;
 
 const Link = ({ to, children }) => (
   <NavItem>
@@ -19,7 +22,23 @@ const Link = ({ to, children }) => (
 );
 
 export default class Navigation extends Component {
-  state = { isCollapsed: true };
+  state = { isScrolled: false, isCollapsed: true };
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = event => {
+    const isScrolled = event.pageY > SCROLL_THRESHOLD;
+
+    if (isScrolled !== this.state.isScrolled) {
+      this.setState({ isScrolled });
+    }
+  };
 
   toggleMenu = () => {
     const { isCollapsed } = this.state;
@@ -27,11 +46,20 @@ export default class Navigation extends Component {
   };
 
   render() {
-    const { isCollapsed } = this.state;
+    const { isCollapsed, isScrolled } = this.state;
 
     return (
       <div>
-        <Navbar color="inverse" inverse expand="md" fixed="top" toggleable>
+        <Navbar
+          className={classnames('ui-navbar', {
+            ' -scrolled': isScrolled,
+            ' -unscrolled': !isScrolled
+          })}
+          dark={!isScrolled}
+          light={isScrolled}
+          expand="md"
+          fixed="top"
+        >
           <NavbarBrand href="/">Calvary Baptist Church</NavbarBrand>
           <NavbarToggler onClick={this.toggleMenu} />
           <Collapse isOpen={!isCollapsed} navbar>

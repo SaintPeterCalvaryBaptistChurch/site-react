@@ -1,0 +1,96 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes shift-down {
+  from {
+    transform: translateY(-1rem);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes shift-up {
+  from {
+    transform: translateY(1rem);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.2;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes pulsate {
+  from,
+  to {
+    opacity: 1;
+    color: #fff;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes pulse {
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0.7;
+  }
+}
+
+%pulsate-initial {
+  animation: pulsate 0.5s ease-in-out both infinite;
+  animation-iteration-count: 8;
+}
+
+%pulsate-forever {
+  animation: pulsate 2s ease-in-out both infinite;
+}
+
+.-pulsate-initial {
+  @extend %pulsate-initial;
+}
+
+.-pulsate-forever {
+  @extend %pulsate-forever;
+}
