@@ -32,7 +32,7 @@ export default class Navigation extends Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
+          <NavbarBrand href="/">Calvary Baptist Church</NavbarBrand>
           <NavbarToggler onClick={this.toggleMenu} />
           <Collapse isOpen={!isCollapsed} navbar>
             <Nav className="ml-auto" navbar>

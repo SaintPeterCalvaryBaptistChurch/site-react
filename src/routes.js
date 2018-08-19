@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { Router, Switch, Route, Redirect } from 'react-router-dom';
 
 import history from './history';
+
 import Navigation from './components/nav-component';
 
-const placeholder = () => <div />;
+import Page from './pages/page';
 
 export default class Routes extends Component {
   render() {
@@ -14,9 +15,9 @@ export default class Routes extends Component {
           <Navigation />
           <Switch>
             <Redirect exact from="/" to="/home" />
-            <Route exact path="/home" component={placeholder} />
-            <Route exact path="/about" component={placeholder} />
-            <Route exact path="/contact" component={placeholder} />
+            <Route exact path="/home" component={Page} />
+            <Route exact path="/about" component={Page} />
+            <Route exact path="/contact" component={Page} />
           </Switch>
         </div>
       </Router>
