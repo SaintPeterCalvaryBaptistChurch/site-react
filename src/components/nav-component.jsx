@@ -11,11 +11,11 @@ import {
 } from 'reactstrap';
 import classnames from 'classnames';
 
-const SCROLL_THRESHOLD = 200;
+const SCROLL_THRESHOLD = 50;
 
 const Link = ({ to, children }) => (
   <NavItem>
-    <NavLink tag={RouterLink} to={to}>
+    <NavLink className="link" tag={RouterLink} to={to}>
       {children}
     </NavLink>
   </NavItem>

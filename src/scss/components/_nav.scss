@@ -7,6 +7,10 @@
   &.-unscrolled {
     animation: fade-in 0.2s ease-in-out both;
     background-color: transparent;
+
+    .link {
+      color: rgba(255, 255, 255, 0.9);
+    }
   }
 }
 
